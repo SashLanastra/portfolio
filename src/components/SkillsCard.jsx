@@ -1,4 +1,5 @@
 import { forwardRef } from "react";
+import PropTypes from "prop-types";
 
 
 export const SkillsCard = forwardRef(({className, children, ...rest}, ref) => {
@@ -12,3 +13,10 @@ export const SkillsCard = forwardRef(({className, children, ...rest}, ref) => {
         </div>
     )
 })
+
+SkillsCard.displayName = 'SkillsCard';
+SkillsCard.propTypes = {
+    className: PropTypes.string,
+    children: PropTypes.node,
+    style: PropTypes.object,
+};

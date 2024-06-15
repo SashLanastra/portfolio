@@ -1,4 +1,5 @@
-import React, { forwardRef } from 'react'
+import { forwardRef } from 'react'
+import PropTypes from "prop-types";
 
 export const ProjectCard = forwardRef(({ className, children, ...rest }, ref) => {
     return (
@@ -11,3 +12,10 @@ export const ProjectCard = forwardRef(({ className, children, ...rest }, ref) =>
         </div>
     )
 })
+
+ProjectCard.displayName = 'ProjectCard';
+ProjectCard.propTypes = {
+    className: PropTypes.string,
+    children: PropTypes.node,
+    style: PropTypes.object,
+};

@@ -1,4 +1,5 @@
-import React, { forwardRef } from 'react'
+import { forwardRef } from 'react'
+import PropTypes from "prop-types";
 
 export const Title = forwardRef(({ className, children, ...rest }, ref) => {
     return (
@@ -17,3 +18,10 @@ export const Title = forwardRef(({ className, children, ...rest }, ref) => {
 
     )
 })
+
+Title.displayName = 'Title';
+Title.propTypes = {
+    className: PropTypes.string,
+    children: PropTypes.node,
+    style: PropTypes.object,
+};

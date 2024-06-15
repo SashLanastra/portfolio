@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import { Link, Outlet } from 'react-router-dom'
 import { Header } from '../components/Header'
 import { Home } from '../Pages/Home'
@@ -19,16 +19,6 @@ export const MainLayout = () => {
     const projects = useRef(null)
     const about = useRef(null)
     const contact = useRef(null)
-
-    // https://www.linkedin.com/in/daniel-mankanda-b394681b2/
-
-
-    // const handleScroll = (elementRef) => {
-    //     window.scrollTo({
-    //         top: elementRef.current.offsetTop,
-    //         behavior: 'smooth',
-    //     })
-    // }
     return (
         <div className='relative flex flex-col min-h-screen w-full' id={responsiveNav ? 'scroll-disable' : ''}>
             <header className='w-full fixed top-0 sm:py-8 flex justify-between lg:justify-around lg:items-center sm:shadow-none shadow-lg z-10 backdrop-blur-3xl px-4'>
@@ -43,7 +33,7 @@ export const MainLayout = () => {
                     responsiveNav={responsiveNav}
                     setResponsiveNav={setResponsiveNav}
                 />
-                <a href="https://www.linkedin.com/in/daniel-mankanda-b394681b2/" target='_blank'>
+                <a href="https://www.linkedin.com/in/daniel-mankanda-b394681b2/" target='_blank' rel='noreferrer'>
                     <img src={linkedinLogo} alt="LinkedIn Logo" className='hidden lg:block' />
                 </a>
             </header>

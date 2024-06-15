@@ -1,9 +1,8 @@
-import React from 'react'
 import { Title } from '../components/Title'
 import { FormInput } from '../components/formInput'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import emailjs from '@emailjs/browser';
-import { useState } from 'react';
+import PropTypes from "prop-types";
 
 export const Contact = ({ contact }) => {
     const [ formInfo, setFormInfo ] = useState({
@@ -12,7 +11,7 @@ export const Contact = ({ contact }) => {
         message: ''
     })
 
-    const form = useRef()
+    const form = useRef(null)
 
     useEffect(() => {
         document.title ='| Contact Me'
@@ -71,6 +70,7 @@ export const Contact = ({ contact }) => {
                     ref={form}
                 >
                     <FormInput
+                        ref={form}
                         type='text'
                         placeholder='Enter Your Name . . .'
                         name='userName'
@@ -78,6 +78,7 @@ export const Contact = ({ contact }) => {
                         onChange={handleChange}
                     />
                     <FormInput
+                        ref={form}
                         type='email'
                         placeholder='Enter Your Email . . .'
                         name='userEmail'
@@ -98,3 +99,7 @@ export const Contact = ({ contact }) => {
         </section>
     )
 }
+
+Contact.propTypes = {
+    contact: PropTypes.object,
+};
