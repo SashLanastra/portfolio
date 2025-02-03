@@ -14,16 +14,17 @@ import { Footer } from '../components/Footer'
 
 export const MainLayout = () => {
     const [responsiveNav, setResponsiveNav] = useState(false)
+    const [projectModal, setProjectModal] = useState(false)
 
     const home = useRef(null)
     const projects = useRef(null)
     const about = useRef(null)
     const contact = useRef(null)
     return (
-        <div className='relative flex flex-col min-h-screen w-full' id={responsiveNav ? 'scroll-disable' : ''}>
-            <header className='w-full fixed top-0 sm:py-8 flex justify-between lg:justify-around lg:items-center sm:shadow-none shadow-lg z-10 backdrop-blur-3xl px-4'>
+        <div className='relative flex flex-col max-w-screen' id={responsiveNav ? 'scroll-disable' : ''}>
+            <header className='w-full fixed top-0 flex justify-between lg:justify-around lg:items-center sm:shadow-none shadow-lg z-10 backdrop-blur-3xl px-4'>
                 <Link to=''>
-                    <img src={logo} alt="" className='sm:hidden lg:block lg:w-28' />
+                    <img src={logo} alt="" className='sm:hidden lg:block' width={150}/>
                 </Link>
                 <Header
                     home={home}
@@ -37,10 +38,12 @@ export const MainLayout = () => {
                     <img src={linkedinLogo} alt="LinkedIn Logo" className='hidden lg:block' />
                 </a>
             </header>
-            <main className=''>
+            <main className='w-full'>
                 <Outlet>
                     <Home
                         home={home}
+                        projectModal={projectModal}
+                        setProjectModal={setProjectModal}
                     />
                     <Projects
                         projects={projects}

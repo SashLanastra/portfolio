@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  font-family: "Clash Display", sans-serif;
+  font-family: 'Clash Grotesk', sans-serif;
 }
 
 .img {

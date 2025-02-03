@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Title } from "../components/Title";
-import img from "../assets/aboutimg.svg";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
@@ -20,14 +19,12 @@ export const About = ({ about }) => {
   return (
     <section
       ref={about}
-      className="flex flex-col gap-8 items-center pt-44 min-h-screen px-4 pb-8 bg-bg-primary"
+      className="flex flex-col gap-8 items-center pt-28 min-h-screen px-4 pb-8 bg-bg-primary lg:justify-center"
     >
       <Title>About Me</Title>
-      <div className="bg-black-75 w-full max-w-4xl rounded flex flex-col items-center gap-4 px-3 py-2 lg:flex-row lg:items-start">
-        <div className="w-1/3 p-2 rounded gradient">
-          <img src={img} alt="" className="w-full img rounded" />
-        </div>
-        <div className="flex flex-col gap-3 w-full lg:w-2/3 items-start">
+
+      <div className="bg-black-75 rounded flex flex-col items-center gap-4 px-3 py-2 lg:flex-row lg:items-start max-w-2xl">
+        <div className="flex flex-col gap-3 w-full items-start">
           <button
             className="text-header-primary underline"
             onClick={handleAbout}
@@ -35,7 +32,7 @@ export const About = ({ about }) => {
             {button}
           </button>
           <p className="text-slate-50 ">
-            My name is , Daniel Mpho Mankanda and I&apos;m a 28 year-old front end
+            My name is , Daniel Mpho Mankanda and I&apos;m a 29 year-old front end
             developer from the Far East Rand of Johannesburg.
           </p>
           {fullAboutMe && (

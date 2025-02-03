@@ -16,7 +16,7 @@ export const Header = ({ responsiveNav, setResponsiveNav }) => {
     return () => {
       document.removeEventListener("click", handleMenu);
     };
-  }, []);
+  }, [setResponsiveNav]);
 
   const activeStyle = {
     backgroundColor: "#000000be",
@@ -49,10 +49,12 @@ export const Header = ({ responsiveNav, setResponsiveNav }) => {
                 <div className="flex items-center relative">
                   {"home".split("").map((letter, i) => (
                     <div
-                      key={i}
+                      key={letter + i}
                       className="origin-top transition-transform duration-300 ease-in-out group-hover:scale-y-0"
                       style={{ transitionDelay: `${i * 75}ms` }}
                     >
+
+
                       {letter}
                     </div>
                   ))}
@@ -60,10 +62,12 @@ export const Header = ({ responsiveNav, setResponsiveNav }) => {
                 <div className="flex items-center absolute bottom-0 left-0">
                   {"home".split("").map((letter, i) => (
                     <div
-                      key={i}
+                      key={letter + i}
                       className="origin-bottom transition-transform duration-300 ease-in-out scale-y-0 group-hover:scale-y-100"
                       style={{ transitionDelay: `${i * 75}ms` }}
                     >
+
+
                       {letter}
                     </div>
                   ))}
@@ -80,10 +84,11 @@ export const Header = ({ responsiveNav, setResponsiveNav }) => {
                 <div className="flex items-center relative">
                   {"projects".split("").map((letter, i) => (
                     <div
-                      key={i}
+                      key={letter + i}
                       className="origin-top transition-transform duration-300 ease-in-out group-hover:scale-y-0"
                       style={{ transitionDelay: `${i * 75}ms` }}
                     >
+
                       {letter}
                     </div>
                   ))}
@@ -91,10 +96,11 @@ export const Header = ({ responsiveNav, setResponsiveNav }) => {
                 <div className="flex items-center absolute bottom-0 left-0">
                   {"projects".split("").map((letter, i) => (
                     <div
-                      key={i}
+                      key={letter + i}
                       className="origin-bottom transition-transform duration-300 ease-in-out scale-y-0 group-hover:scale-y-100"
                       style={{ transitionDelay: `${i * 75}ms` }}
                     >
+
                       {letter}
                     </div>
                   ))}
@@ -111,10 +117,12 @@ export const Header = ({ responsiveNav, setResponsiveNav }) => {
                 <div className="flex items-center relative">
                   {"about".split("").map((letter, i) => (
                     <div
-                      key={i}
+                      key={letter + i}
                       className="origin-top transition-transform duration-300 ease-in-out group-hover:scale-y-0"
                       style={{ transitionDelay: `${i * 75}ms` }}
                     >
+
+
                       {letter}
                     </div>
                   ))}
@@ -122,10 +130,12 @@ export const Header = ({ responsiveNav, setResponsiveNav }) => {
                 <div className="flex items-center absolute bottom-0 left-0">
                   {"about".split("").map((letter, i) => (
                     <div
-                      key={i}
+                      key={letter + i}
                       className="origin-bottom transition-transform duration-300 ease-in-out scale-y-0 group-hover:scale-y-100"
                       style={{ transitionDelay: `${i * 75}ms` }}
                     >
+
+
                       {letter}
                     </div>
                   ))}
@@ -142,10 +152,12 @@ export const Header = ({ responsiveNav, setResponsiveNav }) => {
                 <div className="flex items-center relative">
                   {"contact".split("").map((letter, i) => (
                     <div
-                      key={i}
+                      key={letter + i}
                       className="origin-top transition-transform duration-300 ease-in-out group-hover:scale-y-0"
                       style={{ transitionDelay: `${i * 75}ms` }}
                     >
+
+
                       {letter}
                     </div>
                   ))}
@@ -153,10 +165,12 @@ export const Header = ({ responsiveNav, setResponsiveNav }) => {
                 <div className="flex items-center absolute bottom-0 left-0">
                   {"contact".split("").map((letter, i) => (
                     <div
-                      key={i}
+                      key={letter + i}
                       className="origin-bottom transition-transform duration-300 ease-in-out scale-y-0 group-hover:scale-y-100"
                       style={{ transitionDelay: `${i * 75}ms` }}
                     >
+
+
                       {letter}
                     </div>
                   ))}
@@ -176,7 +190,7 @@ export const Header = ({ responsiveNav, setResponsiveNav }) => {
       >
         <button
           onClick={handleNav}
-          className="absolute -left-12 top-9 bg-slate-50 rounded-sm px-1"
+          className="absolute -left-12 top-7 bg-slate-50 rounded-sm px-1"
           id={!responsiveNav ? "btn-gradient" : ""}
         >
           {menuButton}
