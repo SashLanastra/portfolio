@@ -2,6 +2,13 @@ import { useEffect } from "react";
 import { Title } from "../components/Title";
 import { SkillsCard } from "../components/SkillsCard";
 import { ExperienceCard } from "../components/ExperienceCard";
+import img1 from "../assets/company_1.svg";
+import img2 from "../assets/company_2.svg";
+import img3 from "../assets/company_3.svg";
+
+
+
+
 import PropTypes from "prop-types";
 
 export const Home = ({ home }) => {
@@ -58,32 +65,35 @@ export const Home = ({ home }) => {
         <h4 className="py-4">Work Experience:</h4>
         <div className="flex gap-4 sm:gap-8 p-4 h-full text-md">
           <ExperienceCard
-            src="/src/assets/company_1.svg"
+            src={img1}
             alt="eSimplified badge"
             width={50}
             date="October 2023 - Present"
             company="eSimplified"
             description="Full Stack Developer"
             href="https://esimplified.io"
+
           />
 
           <ExperienceCard
-            src="/src/assets/company_2.svg"
+            src={img2}
             alt="Old Mutual badge"
             date="July 2022 - October 2023"
             company="Old Mutual"
             description="Full Stack Developer"
             width={50}
             href="https://www.oldmutual.co.za/personal/digital-solutions/"
+
           />
           <ExperienceCard
-            src="/src/assets/company_3.svg"
+            src={img3}
             alt="Urbane Software badge"
             date="May 2020 - June 2022"
             company="Urbane Software"
             description="Frontend Developer"
             width={60}
             href="https://urbanesoftware.co.za"
+
           />
         </div>
       </div>

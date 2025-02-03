@@ -43,10 +43,10 @@ export const Contact = ({ contact }) => {
 
     emailjs
       .sendForm(
-        "service_x2a1gjg",
+        "service_ggi930a",
         "template_9ppnaid",
         form.current,
-        "ASVytyTtjXwDVCOSs"
+        "9Z71Uj0bhOpgP_pql"
       )
       .then(
         (result) => {
