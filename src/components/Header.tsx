@@ -1,13 +1,17 @@
 import { useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
-import PropTypes from "prop-types";
 
-export const Header = ({ responsiveNav, setResponsiveNav }) => {
-  const menuRef = useRef(null);
+interface HeaderProps {
+  responsiveNav: boolean;
+  setResponsiveNav: (value: boolean) => void;
+}
+
+export const Header = ({ responsiveNav, setResponsiveNav }: HeaderProps) => {
+  const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    let handleMenu = (e) => {
-      if (!menuRef.current?.contains(e.target)) {
+    let handleMenu = (e: MouseEvent) => {
+      if (!menuRef.current?.contains(e.target as Node)) {
         setResponsiveNav(false);
       }
     };
@@ -42,7 +46,7 @@ export const Header = ({ responsiveNav, setResponsiveNav }) => {
         <ul className="flex gap-12 px-4 py-8 rounded-md w-fit text-slate-900">
           <NavLink
             to=""
-            style={({ isActive }) => (isActive ? activeStyle : null)}
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             <li className="flex items-center px-4 py-2 rounded-md  cursor-pointer tracking-widest">
               <div className="group w-full h-full relative cursor-pointer transition ease-in-out duration-500 hover:scale-100">
@@ -77,7 +81,7 @@ export const Header = ({ responsiveNav, setResponsiveNav }) => {
           </NavLink>
           <NavLink
             to="projects"
-            style={({ isActive }) => (isActive ? activeStyle : null)}
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             <li className="flex items-center px-4 py-2 rounded-md  cursor-pointer tracking-widest">
               <div className="group w-full h-full relative cursor-pointer transition ease-in-out duration-500 hover:scale-100">
@@ -110,7 +114,7 @@ export const Header = ({ responsiveNav, setResponsiveNav }) => {
           </NavLink>
           <NavLink
             to="about"
-            style={({ isActive }) => (isActive ? activeStyle : null)}
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             <li className="flex items-center px-4 py-2 rounded-md  cursor-pointer tracking-widest">
               <div className="group w-full h-full relative cursor-pointer transition ease-in-out duration-500 hover:scale-100">
@@ -145,7 +149,7 @@ export const Header = ({ responsiveNav, setResponsiveNav }) => {
           </NavLink>
           <NavLink
             to="contact"
-            style={({ isActive }) => (isActive ? activeStyle : null)}
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             <li className="flex items-center px-4 py-2 rounded-md  cursor-pointer tracking-widest">
               <div className="group w-full h-full relative cursor-pointer transition ease-in-out duration-500 hover:scale-100">
@@ -198,7 +202,7 @@ export const Header = ({ responsiveNav, setResponsiveNav }) => {
         <ul className="flex flex-col w-fit bg-black-75 backdrop-blur-lg min-h-screen py-20">
           <NavLink
             to=""
-            style={({ isActive }) => (isActive ? resNavActive : null)}
+            style={({ isActive }) => (isActive ? resNavActive : undefined)}
             className="w-full py-4 text-slate-50 px-20 hover:bg-secondary focus:bg-secondary"
             onClick={handleNav}
           >
@@ -206,7 +210,7 @@ export const Header = ({ responsiveNav, setResponsiveNav }) => {
           </NavLink>
           <NavLink
             to="projects"
-            style={({ isActive }) => (isActive ? resNavActive : null)}
+            style={({ isActive }) => (isActive ? resNavActive : undefined)}
             className="w-full py-4 text-slate-50 px-20 hover:bg-secondary focus:bg-secondary"
             onClick={handleNav}
           >
@@ -214,7 +218,7 @@ export const Header = ({ responsiveNav, setResponsiveNav }) => {
           </NavLink>
           <NavLink
             to="about"
-            style={({ isActive }) => (isActive ? resNavActive : null)}
+            style={({ isActive }) => (isActive ? resNavActive : undefined)}
             className="w-full py-4 text-slate-50 px-20 hover:bg-secondary focus:bg-secondary"
             onClick={handleNav}
           >
@@ -222,7 +226,7 @@ export const Header = ({ responsiveNav, setResponsiveNav }) => {
           </NavLink>
           <NavLink
             to="contact"
-            style={({ isActive }) => (isActive ? resNavActive : null)}
+            style={({ isActive }) => (isActive ? resNavActive : undefined)}
             className="w-full py-4 text-slate-50 px-20 hover:bg-secondary focus:bg-secondary"
             onClick={handleNav}
           >
@@ -232,9 +236,4 @@ export const Header = ({ responsiveNav, setResponsiveNav }) => {
       </nav>
     </>
   );
-};
-
-Header.propTypes = {
-  responsiveNav: PropTypes.bool.isRequired,
-  setResponsiveNav: PropTypes.func.isRequired,
 };

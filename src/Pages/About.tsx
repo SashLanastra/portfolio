@@ -1,9 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, RefObject } from "react";
 import { Title } from "../components/Title";
 import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
 
-export const About = ({ about }) => {
+interface AboutProps {
+  about?: RefObject<HTMLElement>;
+}
+
+export const About = ({ about }: AboutProps) => {
   const [fullAboutMe, setFullAboutMe] = useState(false);
 
   useEffect(() => {
@@ -96,8 +99,4 @@ export const About = ({ about }) => {
       </div>
     </section>
   );
-};
-
-About.propTypes = {
-  about: PropTypes.object,
 };

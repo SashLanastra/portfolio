@@ -1,7 +1,11 @@
-import { forwardRef } from 'react'
-import PropTypes from "prop-types";
+import { forwardRef, HTMLAttributes, ReactNode } from 'react'
 
-export const Title = forwardRef(({ className, children, ...rest }, ref) => {
+interface TitleProps extends HTMLAttributes<HTMLDivElement> {
+    className?: string;
+    children?: ReactNode;
+}
+
+export const Title = forwardRef<HTMLDivElement, TitleProps>(({ className = '', children, ...rest }, ref) => {
     return (
         <div className='relative w-fit'>
             <div className='absolute left-4 top-2 rounded-md bg-color-blocker w-full h-12 sm:left-6 sm:top-3 sm:h-14'></div>
@@ -20,8 +24,3 @@ export const Title = forwardRef(({ className, children, ...rest }, ref) => {
 })
 
 Title.displayName = 'Title';
-Title.propTypes = {
-    className: PropTypes.string,
-    children: PropTypes.node,
-    style: PropTypes.object,
-};

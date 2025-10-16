@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, RefObject } from "react";
 import { Title } from "../components/Title";
 import { SkillsCard } from "../components/SkillsCard";
 import { ExperienceCard } from "../components/ExperienceCard";
@@ -7,12 +7,11 @@ import img2 from "../assets/company_2.svg";
 import img3 from "../assets/company_3.svg";
 import img4 from "../assets/company_4.svg";
 
+interface HomeProps {
+  home?: RefObject<HTMLElement>;
+}
 
-
-
-import PropTypes from "prop-types";
-
-export const Home = ({ home }) => {
+export const Home = ({ home }: HomeProps) => {
   const greetings = [
     "Hello",
     "Sawubona",
@@ -195,6 +194,3 @@ export const Home = ({ home }) => {
   );
 };
 
-Home.propTypes = {
-  home: PropTypes.object,
-};

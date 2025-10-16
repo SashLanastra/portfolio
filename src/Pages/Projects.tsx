@@ -17,7 +17,7 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 
 export const Projects = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const projects = useRef(null);
+  const projects = useRef<HTMLElement>(null);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {

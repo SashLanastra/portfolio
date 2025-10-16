@@ -1,10 +1,13 @@
 import { Title } from "../components/Title";
 import { FormInput } from "../components/FormInput";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, RefObject, FormEvent, ChangeEvent } from "react";
 import emailjs from "@emailjs/browser";
-import PropTypes from "prop-types";
 
-export const Contact = ({ contact }) => {
+interface ContactProps {
+  contact?: RefObject<HTMLElement>;
+}
+
+export const Contact = ({ contact }: ContactProps) => {
   const [formInfo, setFormInfo] = useState({
     userName: "",
     userEmail: "",
@@ -13,7 +16,7 @@ export const Contact = ({ contact }) => {
   const [contactInfoTab, setContactInfoTab] = useState(true);
   const [contactFormTab, setContactFormTab] = useState(false);
 
-  const form = useRef(null);
+  const form = useRef<HTMLFormElement>(null);
 
   useEffect(() => {
     document.title = "| Contact Me";
@@ -28,7 +31,7 @@ export const Contact = ({ contact }) => {
     setContactInfoTab(false);
     setContactFormTab(true);
   };
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormInfo((prev) => {
       return {
@@ -38,8 +41,10 @@ export const Contact = ({ contact }) => {
     });
   };
 
-  const sendEmail = (e) => {
+  const sendEmail = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (!form.current) return;
 
     emailjs
       .sendForm(
@@ -51,7 +56,7 @@ export const Contact = ({ contact }) => {
       .then(
         (result) => {
           console.log(result.text);
-          window.location.reload(true);
+          window.location.reload();
           alert("Message Sent!");
 
           formInfo.userName = "";
@@ -180,7 +185,6 @@ export const Contact = ({ contact }) => {
             </div>
             <form className="w-full px-4" onSubmit={sendEmail} ref={form}>
               <FormInput
-                ref={form}
                 type="text"
                 placeholder="Enter Your Name . . ."
                 name="userName"
@@ -188,7 +192,6 @@ export const Contact = ({ contact }) => {
                 onChange={handleChange}
               />
               <FormInput
-                ref={form}
                 type="email"
                 placeholder="Enter Your Email . . ."
                 name="userEmail"
@@ -198,7 +201,7 @@ export const Contact = ({ contact }) => {
               <textarea
                 name="message"
                 id="message"
-                rows="10"
+                rows={10}
                 placeholder="Write A Message . . ."
                 className="w-full rounded-sm p-2 focus:outline-hidden"
                 value={formInfo.message}
@@ -213,8 +216,4 @@ export const Contact = ({ contact }) => {
       </div>
     </section>
   );
-};
-
-Contact.propTypes = {
-  contact: PropTypes.object,
 };

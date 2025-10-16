@@ -16,10 +16,10 @@ export const MainLayout = () => {
     const [responsiveNav, setResponsiveNav] = useState(false)
     const [projectModal, setProjectModal] = useState(false)
 
-    const home = useRef(null)
-    const projects = useRef(null)
-    const about = useRef(null)
-    const contact = useRef(null)
+    const home = useRef<HTMLElement>(null)
+    const projects = useRef<HTMLElement>(null)
+    const about = useRef<HTMLElement>(null)
+    const contact = useRef<HTMLElement>(null)
     return (
         <div className='relative flex flex-col max-w-screen' id={responsiveNav ? 'scroll-disable' : ''}>
             <header className='w-full fixed top-0 flex justify-between lg:justify-around lg:items-center sm:shadow-none shadow-lg z-10 backdrop-blur-3xl px-4'>
