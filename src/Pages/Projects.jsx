@@ -52,7 +52,7 @@ export const Projects = () => {
       description:
         "Shopping Spree is an e-commerce website, with a simplistic, yet slick design that is sure to grab any customers attention.",
 
-      link: "https://sash-shopping-spree.netlify.app",
+      link: "https://shopping-spree-site.vercel.app/",
     },
     {
       id: 3,

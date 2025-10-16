@@ -14,6 +14,7 @@ export const ExperienceCard = forwardRef(({ className, ...rest }, ref) => {
           alt={rest.alt}
           width={rest.width}
           height={50}
+          className="text-red-700"
         />{" "}
         <div className="hidden md:flex flex-col items-center justify-center">
           <p className="text-xs sm:text-sm">{rest.company}</p>

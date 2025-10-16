@@ -5,6 +5,7 @@ import { ExperienceCard } from "../components/ExperienceCard";
 import img1 from "../assets/company_1.svg";
 import img2 from "../assets/company_2.svg";
 import img3 from "../assets/company_3.svg";
+import img4 from "../assets/company_4.svg";
 
 
 
@@ -61,14 +62,24 @@ export const Home = ({ home }) => {
         applications from backend to frontend.
       </p>
 
-      <div className="bg-[#030303b1] rounded-md text-center text-white mx-4">
+      <div className="rounded-md text-center mx-4">
         <h4 className="py-4">Work Experience:</h4>
         <div className="flex gap-4 sm:gap-8 p-4 h-full text-md">
+        <ExperienceCard
+            src={img4}
+            alt="Urbane Software badge"
+            date="April 2025 - Present"
+            company="Wamly"
+            description="Senior Frontend Developer"
+            width={60}
+            href="https://wamly.io"
+
+          />
           <ExperienceCard
             src={img1}
             alt="eSimplified badge"
             width={50}
-            date="October 2023 - Present"
+            date="October 2023 - April"
             company="eSimplified"
             description="Full Stack Developer"
             href="https://esimplified.io"
@@ -95,6 +106,7 @@ export const Home = ({ home }) => {
             href="https://urbanesoftware.co.za"
 
           />
+          
         </div>
       </div>
 
