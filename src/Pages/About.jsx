@@ -23,7 +23,7 @@ export const About = ({ about }) => {
     >
       <Title>About Me</Title>
 
-      <div className="bg-black-75 rounded flex flex-col items-center gap-4 px-3 py-2 lg:flex-row lg:items-start max-w-2xl">
+      <div className="bg-black-75 rounded-sm flex flex-col items-center gap-4 px-3 py-2 lg:flex-row lg:items-start max-w-2xl">
         <div className="flex flex-col gap-3 w-full items-start">
           <button
             className="text-header-primary underline"

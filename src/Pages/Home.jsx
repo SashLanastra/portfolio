@@ -100,7 +100,7 @@ export const Home = ({ home }) => {
 
       <Title>Technical Skills</Title>
 
-      <div className="flex flex-col items-center sm:grid sm:grid-cols-2 sm:place-content-center lg:grid lg:grid-cols-3 sm:place-items-start sm:max-w-screen-xl sm:gap-10  gap-8 mb-8 px-6">
+      <div className="flex flex-col items-center sm:grid sm:grid-cols-2 sm:place-content-center lg:grid lg:grid-cols-3 sm:place-items-start sm:max-w-(--breakpoint-xl) sm:gap-10  gap-8 mb-8 px-6">
         <div className="flex flex-col items-center w-full sm:max-w-sm gap-2">
           <h4 className="text-xl underline font-bold text-primary">
             Programming Languages

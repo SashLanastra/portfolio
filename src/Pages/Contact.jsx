@@ -200,7 +200,7 @@ export const Contact = ({ contact }) => {
                 id="message"
                 rows="10"
                 placeholder="Write A Message . . ."
-                className="w-full rounded p-2 focus:outline-none"
+                className="w-full rounded-sm p-2 focus:outline-hidden"
                 value={formInfo.message}
                 onChange={handleChange}
               />

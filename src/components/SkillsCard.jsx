@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 export const SkillsCard = forwardRef(({className, children, ...rest}, ref) => {
     return (
         <div 
-            className={`bg-color-blocker shadow-xl px-1 w-fit rounded box-shadow ${className}`}
+            className={`bg-color-blocker shadow-xl px-1 w-fit rounded-sm box-shadow ${className}`}
             {...rest}
             ref={ref}
         >

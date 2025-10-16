@@ -190,7 +190,7 @@ export const Header = ({ responsiveNav, setResponsiveNav }) => {
       >
         <button
           onClick={handleNav}
-          className="absolute -left-12 top-7 bg-slate-50 rounded-sm px-1"
+          className="absolute -left-12 top-7 bg-slate-50 rounded-xs px-1"
           id={!responsiveNav ? "btn-gradient" : ""}
         >
           {menuButton}

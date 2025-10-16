@@ -119,7 +119,7 @@ export const Projects = () => {
     >
 
       {!isMobile ? (
-        <div className="relative w-full max-w-6xl h-[36rem] z-0">
+        <div className="relative w-full max-w-6xl h-144 z-0">
           {projectsData.map((project, index) => (
             <button
               key={project.id}
@@ -133,7 +133,7 @@ export const Projects = () => {
                   src={project.image}
                   alt={project.title}
                   placeholderSrc={project.placeholderSrc}
-                  className="rounded w-full"
+                  className="rounded-sm w-full"
                   effect="blur"
 
 
@@ -190,7 +190,7 @@ export const Projects = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="rounded w-full"
+                  className="rounded-sm w-full"
                 />
                 <h2 className="text-slate-50 text-lg tracking-widest">
                   {project.title}
