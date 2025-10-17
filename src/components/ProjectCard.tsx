@@ -1,21 +1,22 @@
-import { forwardRef, HTMLAttributes, ReactNode } from 'react'
+import { forwardRef, type HTMLAttributes, type ReactNode } from "react";
 
 interface ProjectCardProps extends HTMLAttributes<HTMLDivElement> {
-    className?: string;
-    children?: ReactNode;
+	className?: string;
+	children?: ReactNode;
 }
 
-export const ProjectCard = forwardRef<HTMLDivElement, ProjectCardProps>(({ className = '', children, ...rest }, ref) => {
-    return (
-        <div 
-            className={`flex flex-col items-center gap-2 px-3 py-2 bg-black-75 max-w-xl rounded-md backdrop-blur-lg ${className}`}
-            {...rest}
-            ref={ref}
-        >
+export const ProjectCard = forwardRef<HTMLDivElement, ProjectCardProps>(
+	({ className = "", children, ...rest }, ref) => {
+		return (
+			<div
+				className={`flex flex-col items-center gap-2 px-3 py-2 bg-black-75 max-w-xl rounded-md backdrop-blur-lg ${className}`}
+				{...rest}
+				ref={ref}
+			>
+				{children}
+			</div>
+		);
+	},
+);
 
-            {children}
-        </div>
-    )
-})
-
-ProjectCard.displayName = 'ProjectCard';
+ProjectCard.displayName = "ProjectCard";
